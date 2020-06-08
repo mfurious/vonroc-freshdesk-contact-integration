@@ -83,7 +83,7 @@ requestEDIData = (client, mail) =>{
         } else {
             data.items.forEach(order => {
                 $("#ediBody").append(`
-                        <a href="https://vonroc.com/admin_8yhl9t/sales/order/view/order_id/${order.entity_id}" target="_blank">#${order.increment_id}</a> 
+                        <a href="https://edi.vonroc.com/admin_8yhl9t/sales/order/view/order_id/${order.entity_id}" target="_blank">#${order.increment_id}</a> 
                         <br>
                 `)
             })
