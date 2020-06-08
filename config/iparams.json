@@ -1,0 +1,35 @@
+ 
+{
+    "url1": {
+        "display_name": "Store URL",
+        "description": "Please enter your store URL",
+        "type": "text",
+        "required": true,
+        "secure": true
+        },
+    
+    "a": {
+        "display_name": "Magento access key",
+        "description": "Please enter your access key",
+        "type": "text",
+        "required": true,
+        "secure": true
+        },
+    
+    "url2": {
+        "display_name": "EDI URL",
+        "description": "Please enter your EDI URL",
+        "type": "text",
+        "required": true,
+        "secure": true
+        },
+    
+    "a2": {
+        "display_name": "EDI access key",
+        "description": "Please enter your access key",
+        "type": "text",
+        "required": true,
+        "secure": true
+        }
+    }
+    
