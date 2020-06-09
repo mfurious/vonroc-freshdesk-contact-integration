@@ -29,7 +29,7 @@ getOrders = (client, data) => {
         </div>
         <div id="magBody"></div>
         <div id="ediBody"></div>
-    `)
+    `);
 
 
     data.contact.other_emails.unshift(data.contact.email);
@@ -43,15 +43,15 @@ getOrders = (client, data) => {
 
 requestMAGData = (client, mail) =>{
     var method = "get";
-    var url = BASE_URL_1 + mail
+    var url = BASE_URL_1 + mail;
     var options = {
         headers: {
             "Content-Type": "application/json",
             "Authorization": 'Bearer <%= iparam.a %>'
-    }}
+    }};
 
     client.request[method](url, options).then(data =>{
-        data = JSON.parse(data.response)
+        data = JSON.parse(data.response);
     
         if (data.items < 1){
             return
@@ -60,33 +60,33 @@ requestMAGData = (client, mail) =>{
                 $("#magBody").append(`
                     <b>Order:</b> <a href="https://vonroc.com/admin_8yhl9t/sales/order/view/order_id/${order.entity_id}" target="_blank">#${order.increment_id}</a>
                     <br>
-                `)
-            })
-        }
-    })
-}
+                `);
+            });
+        };
+    });
+};
 
 requestEDIData = (client, mail) =>{
     var method = "get";
-    var url = BASE_URL_2 + mail
+    var url = BASE_URL_2 + mail;
     var options = {
         headers: {
             "Content-Type": "application/json",
             "Authorization": 'Bearer <%= iparam.a %>'
-    }}
+    }};
 
     client.request[method](url, options).then(data =>{
-        data = JSON.parse(data.response)
+        data = JSON.parse(data.response);
     
         if (data.items < 1){
-            return
+            return;
         } else {
             data.items.forEach(order => {
                 $("#ediBody").append(`
                         <a href="https://edi.vonroc.com/admin_8yhl9t/sales/order/view/order_id/${order.entity_id}" target="_blank">#${order.increment_id}</a> 
                         <br>
-                `)
-            })
-        }
-    })
+                `);
+            });
+        };
+    });
 }
